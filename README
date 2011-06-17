@@ -1,0 +1,6 @@
+bundle install
+rails g jquery:install --ui
+rails g controller drawings index show
+rails g model drawing
+annotate
+rails generate simple_form:install

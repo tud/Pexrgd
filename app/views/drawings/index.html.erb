@@ -1,0 +1,57 @@
+<%=t :drawings %>
+
+<table>
+  <tr>
+    <th>Drawing Type</th>
+    <th>Number</th>
+    <th>Rev</th>
+    <th>Format</th>
+    <th>Sheet</th>
+    <th>Descr</th>
+    <th>Title</th>
+    <th>Assembly</th>
+    <th>Designer</th>
+    <th>Area</th>
+    <th>Cad Flag</th>
+<!--
+    <th>Void Mark</th>
+    <th>Voided At</th>
+    <th>Replaced By</th>
+    <th>Change Descr</th>
+    <th>Modified By</th>
+    <th>Modified At</th>
+    <th>Bom Flag</th>
+-->
+  </tr>
+  <% for drawing in @drawings %>
+    <tr>
+      <td><%= drawing.drawing_type %></td>
+      <td><%= drawing.number %></td>
+      <td><%= drawing.rev %></td>
+      <td><%= drawing.format %></td>
+      <td><%= drawing.sheet %></td>
+      <td><%= drawing.descr %></td>
+      <td><%= drawing.title %></td>
+      <td><%= drawing.assembly %></td>
+      <td><%= drawing.designer %></td>
+      <td><%= drawing.area %></td>
+      <td><%= drawing.cad_flag %></td>
+<!--
+      <td><%= drawing.void_mark %></td>
+      <td><%= drawing.voided_at %></td>
+      <td><%= drawing.replaced_by %></td>
+      <td><%= drawing.change_descr %></td>
+      <td><%= drawing.modified_by %></td>
+      <td><%= drawing.modified_at %></td>
+      <td><%= drawing.bom_flag %></td>
+-->
+      <td><%= link_to "Show", drawing %></td>
+<!--
+      <td><%= link_to "Edit", edit_drawing_path(drawing) %></td>
+      <td><%= link_to "Destroy", drawing, :confirm => 'Are you sure?', :method => :delete %></td>
+-->
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Drawing", new_drawing_path %></p>

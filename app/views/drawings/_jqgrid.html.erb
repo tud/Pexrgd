@@ -1,0 +1,31 @@
+<table id="drawings_list"><tr><td/></tr></table> 
+<div id="drawings_pager"></div>
+
+<script type="text/javascript">
+$(function(){ 
+	$("#drawings_list").jqGrid({
+		url: '/drawings.json?'+"<%= @q.to_param %>",
+		datatype: 'json',
+		mtype: 'GET',
+		colNames:['Id','Number', 'Rev','Format','Description','Designer'],
+		colModel :[ 
+			{name:'id', index:'id', width:10}, 
+			{name:'number', index:'number', width:18}, 
+			{name:'rev', index:'rev', width:8}, 
+			{name:'format', index:'format', width:12}, 
+			{name:'descr', index:'descr', width:80}, 
+			{name:'designer', index:'designer', width:20} 
+		],
+		pager: 'drawings_pager',
+		rowNum:100,
+		rowList:[100,200,300],
+		sortname: 'number',
+		sortorder: 'desc',
+		viewrecords: true,
+		gridview: true,
+		caption: 'Drawings',
+		height: 'auto',
+		width: 800
+	}).navGrid('#drawings_pager',{edit:false,add:false,del:false});
+}); 
+</script>

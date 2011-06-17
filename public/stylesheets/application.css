@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'SteinerRegular';
+    src: url('font/steinerlight-webfont.eot');
+    src: url('font/steinerlight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/steinerlight-webfont.woff') format('woff'),
+         url('font/steinerlight-webfont.ttf') format('truetype'),
+         url('font/steinerlight-webfont.svg#SteinerRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.ui-layout-north{
+  text-align:center;
+}
+.ui-layout-north #north_content{
+  margin-top:18px;
+}
+.ui-layout-north #north_content span{
+  padding:10px 10px 0 10px;
+  font-family: 'SteinerRegular';
+  font-size:30px;
+  font-weight:bold;
+}
+
+.pex_accordion {
+  margin:0 0 -10px 0 !important;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+#drawing_search th {
+	text-align: left;
+	white-space: nowrap;
+	width:150px;
+	font-weight: normal;
+}

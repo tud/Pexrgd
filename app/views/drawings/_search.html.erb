@@ -1,0 +1,33 @@
+<%= search_form_for @q, :url => jqgrid_drawings_path, :remote => true do |f| %>
+	<table>
+		<tbody>
+			<tr>
+				<th><%= f.label :number_cont %></th>
+				<td><%= f.autocomplete_field :number_cont, autocomplete_drawing_number_drawings_path %></td>
+			</tr>
+			<tr>
+				<th><%= f.label :rev_cont %></th>
+				<td><%= f.autocomplete_field :rev_cont, autocomplete_drawing_rev_drawings_path %></td>
+			</tr>
+			<tr>
+				<th><%= f.label :format_cont %></th>
+				<td><%= f.autocomplete_field :format_cont, autocomplete_drawing_format_drawings_path %></td>
+			</tr>
+			<tr>
+				<th><%= f.label :descr_cont %></th>
+				<td><%= f.autocomplete_field :descr_cont, autocomplete_drawing_descr_drawings_path %></td>
+			</tr>
+			<tr>
+				<th><%= f.label :designer_cont %></th>
+				<td><%= f.autocomplete_field :designer_cont, autocomplete_drawing_designer_drawings_path %></td>
+			</tr>
+		<tbody>
+	</table>
+	<p class="clearfix">
+		<%= f.submit %>
+	</p>
+<% end %>
+
+<script>
+	var centerWidth = pexLayout.cssWidth('center');
+</script>

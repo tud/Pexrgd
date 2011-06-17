@@ -1,0 +1,90 @@
+<%=t :drawings %>
+
+<%= debug @jqgrid.to_json %>
+
+<table>
+  <tr>
+    <!-- <th>Drawing Type</th> -->
+    <th>Number</th>
+    <th>Rev</th>
+    <th>Format</th>
+    <!-- <th>Sheet</th> -->
+    <th>Descr</th>
+    <!-- <th>Title</th> -->
+    <!-- <th>Assembly</th> -->
+    <th>Designer</th>
+    <!-- <th>Area</th> -->
+    <!-- <th>Cad Flag</th> -->
+<!--
+    <th>Void Mark</th>
+    <th>Voided At</th>
+    <th>Replaced By</th>
+    <th>Change Descr</th>
+    <th>Modified By</th>
+    <th>Modified At</th>
+    <th>Bom Flag</th>
+-->
+  </tr>
+  <% for drawing in @drawings %>
+    <tr>
+      <!-- <td><%= drawing.drawing_type %></td> -->
+      <td><%= drawing.number %></td>
+      <td><%= drawing.rev %></td>
+      <td><%= drawing.format %></td>
+      <!-- <td><%= drawing.sheet %></td> -->
+      <td><%= drawing.descr %></td>
+      <!-- <td><%= drawing.title %></td> -->
+      <!-- <td><%= drawing.assembly %></td> -->
+      <td><%= drawing.designer %></td>
+      <!-- <td><%= drawing.area %></td> -->
+      <!-- <td><%= drawing.cad_flag %></td> -->
+<!--
+      <td><%= drawing.void_mark %></td>
+      <td><%= drawing.voided_at %></td>
+      <td><%= drawing.replaced_by %></td>
+      <td><%= drawing.change_descr %></td>
+      <td><%= drawing.modified_by %></td>
+      <td><%= drawing.modified_at %></td>
+      <td><%= drawing.bom_flag %></td>
+-->
+      <td><%= link_to "Show", drawing %></td>
+<!--
+      <td><%= link_to "Edit", edit_drawing_path(drawing) %></td>
+      <td><%= link_to "Destroy", drawing, :confirm => 'Are you sure?', :method => :delete %></td>
+-->
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Drawing", new_drawing_path %></p>
+
+<table id="drawings_list"><tr><td/></tr></table> 
+<div id="drawings_pager"></div>
+
+<script type="text/javascript">
+$(function(){ 
+  $("#drawings_list").jqGrid({
+	url: '/drawings.json?utf8=✓&q%5Bdesigner_cont%5D=PROGE&commit=Search',
+	datatype: 'json',
+	mtype: 'GET',
+    colNames:['Id','Number', 'Rev','Format','Description','Designer'],
+    colModel :[ 
+      {name:'id', index:'id', width:8}, 
+      {name:'number', index:'number', width:10}, 
+      {name:'rev', index:'rev', width:3, align:'right'}, 
+      {name:'format', index:'format', width:3, align:'right'}, 
+      {name:'descr', index:'descr', width:80, align:'right'}, 
+      {name:'designer', index:'designer', width:20, sortable:false} 
+    ],
+    pager: '#drawings_pager',
+    rowNum:100,
+    rowList:[100,200,300],
+    sortname: 'number',
+    sortorder: 'desc',
+    viewrecords: true,
+    gridview: true,
+    caption: 'Drawings grid'
+  });
+  $("#drawings_list").jqGrid('navGrid','#drawings_pager',{edit:false,add:false,del:false});
+}); 
+</script>
