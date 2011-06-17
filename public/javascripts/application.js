@@ -1,7 +1,4 @@
 var pexlayout;
-var pex_domain = location.protocol + "//" + location.host;
-
-alert(pex_domain);
 
 $(function() {
 	var container = $('body');
