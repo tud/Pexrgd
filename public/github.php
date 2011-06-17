@@ -1,0 +1,1 @@
+<?php `cd ../../Pexrgd; git pull`; ?>
