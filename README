@@ -4,3 +4,26 @@ rails g controller drawings index show
 rails g model drawing
 annotate
 rails generate simple_form:install
+
+
+plugin usati:
+https://github.com/ernie/ransack (implemantare ricerca)
+https://github.com/rails/jquery-ujs (usare jquery)
+https://github.com/plataformatec/simple_form (gestione forms)
+https://github.com/josevalim/inherited_resources (resources)
+#http://rubygems.org/gems/mongrel (web server)
+https://github.com/crowdint/rails3-jquery-autocomplete (jquery autocomplete)
+https://github.com/Juanmcuello/jqgrid_for_rails (usare jqgrid)
+https://github.com/mislav/will_paginate (paginazione)
+
+https://github.com/cldwalker/hirb (console)
+https://github.com/janlelis/wirb (console)
+https://github.com/cldwalker/bond (console)
+https://github.com/michaeldv/awesome_print (console)
+https://github.com/ctran/annotate_models (annotazione modelli)
+https://github.com/ryanb/nifty-generators (generatori)
+
+
+plugin da usare:
+https://github.com/plataformatec/devise (login)
+https://github.com/amatsuda/kaminari (da usare al posto di will_paginate)

@@ -1,33 +1,23 @@
 class DrawingsController < InheritedResources::Base
   respond_to :js, :json
   
-  autocomplete :drawing, :number, :full => true, :scopes => [:distinct_designer]
-  autocomplete :drawing, :rev, :scopes => [:distinct_designer]
-  autocomplete :drawing, :format, :scopes => [:distinct_format]
-  autocomplete :drawing, :descr, :scopes => [:distinct_descr]
+  autocomplete :drawing, :number,   :full => true, :scopes => [:distinct_designer]
+  autocomplete :drawing, :rev,                     :scopes => [:distinct_designer]
+  autocomplete :drawing, :format,                  :scopes => [:distinct_format]
+  autocomplete :drawing, :descr,                   :scopes => [:distinct_descr]
   autocomplete :drawing, :designer, :full => true, :scopes => [:distinct_designer]
   
   def index
-    @qq = Drawing.search(params[:q])
-    @drawings = @qq.result(:distinct => true)
+    @columns = ['id','number','rev','format','descr','designer']
+    search_result = Drawing.search(params[:q])
+    @drawings = search_result.result(:distinct => true).paginate(
+      :page     => params[:page],
+      :per_page => params[:rows],
+      :order    => order_by_from_params(params))
 
-    @jqgrid = Hash.new
-    @jqgrid[:total] = 1
-    @jqgrid[:page] = 1
-    @jqgrid[:records] = @drawings.length
-    @jqgrid[:rows] = @drawings.collect{|u| {
-      :id => u.id,
-      :cell => [
-        u.id,
-        u.number,
-        u.rev,
-        u.format,
-        u.descr,
-        u.designer
-     ]}}
     respond_to do |format|
       format.js
-      format.json { render :json => @jqgrid }
+      format.json { render :json => json_for_jqgrid(@drawings, @columns) }
     end
   end
 

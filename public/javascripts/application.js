@@ -14,7 +14,7 @@ $(function() {
 		, center__onresize: function () {
 			$('#center_accordion').accordion('resize');
 			var centerWidth = pexlayout.cssWidth('center');
-			$('#drawings_list').setGridWidth(centerWidth-60);
+			$('#drawings_list').setGridWidth(centerWidth-67);
 		}
 		, spacing_open: 2
 		, spacing_close: 5
