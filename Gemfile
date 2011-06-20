@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.0.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,8 +10,9 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'ransack'
 gem 'inherited_resources'
-gem 'mongrel', '>= 1.2.0.pre2'
 gem 'rails3-jquery-autocomplete'
+gem 'jqgrid_for_rails'
+gem 'will_paginate', '~> 3.0.pre2'
 
 group :development do
   gem 'annotate-models'
@@ -19,7 +20,8 @@ group :development do
   gem 'wirb'
   gem 'bond'
   gem 'awesome_print'
-  gem "nifty-generators"
+  gem 'nifty-generators'
+#  gem 'mongrel', '>= 1.2.0.pre2'
 end
 
 # Use unicorn as the web server

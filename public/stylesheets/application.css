@@ -36,3 +36,44 @@ a:link {
 	width:150px;
 	font-weight: normal;
 }
+
+/* correct jqgrid problems */
+.ui-jqgrid .ui-pg-input {
+  height: 16px;
+}
+select.ui-pg-selbox {
+  height: 19px;
+  margin: 0;
+  padding: 0 18px 0 0;
+}
+
+.ui-jqgrid-titlebar-close {
+  display:none;
+}
+/* input.ui-pg-selbox {height: 13px; padding: 0;}*/
+
+/*
+.jqmWindow table {margin: 0; width: 300px;}
+.jqmWindow td, tr {padding:0;}
+
+.jqmClose img {padding-left: 282px;}
+
+
+.nav-button {padding-top: 0;}
+
+div.loading {background: #FFBC0B;}
+table.scroll th div {font-weight: bold;}
+
+.selected-row, .selected-row TD {
+	background-color: #fdf5cf;
+	color:#1c94c4;
+}
+table.scroll tr.selected td {
+	background: #fdf5cf;
+	color:#1c94c4;
+}
+table.scroll tr.over td{
+	background-color: #fdf5cf;
+}
+
+*/
