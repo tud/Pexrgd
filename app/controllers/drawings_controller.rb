@@ -28,4 +28,5 @@ class DrawingsController < InheritedResources::Base
   def jqgrid
     @q = params
   end
+
 end

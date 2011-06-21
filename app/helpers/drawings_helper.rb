@@ -5,24 +5,24 @@ module DrawingsHelper
     grid = [{
       :url => drawings_path + ".json?" + @q.to_param,
       :datatype => 'json',
-      :mtype => 'GET',
+      :mtype    => 'GET',
       :colNames => ['Id','Number','Rev','Format','Description','Designer'],
-      :colModel  => [
+      :colModel => [
         {:name => 'id',       :index => 'id',       :width => 20,  :hidden => true}, 
-        {:name => 'number',   :index => 'number',   :width => 100}, 
-        {:name => 'rev',      :index => 'rev',      :width => 30}, 
-        {:name => 'format',   :index => 'format',   :width => 25}, 
-        {:name => 'descr',    :index => 'descr',    :width => 120}, 
-        {:name => 'designer', :index => 'designer', :width => 40} 
+        {:name => 'number',   :index => 'number',   :width => 100 }, 
+        {:name => 'rev',      :index => 'rev',      :width => 30  }, 
+        {:name => 'format',   :index => 'format',   :width => 25  }, 
+        {:name => 'descr',    :index => 'descr',    :width => 120 }, 
+        {:name => 'designer', :index => 'designer', :width => 40  } 
       ],
-      :pager => '#drawings_pager',
-      :rowNum => 10,
-      :rowList => [10, 20, 30, 50],
-      :sortname => 'number',
+      :pager     => '#drawings_pager',
+      :rowNum    => 10,
+      :rowList   => [10, 20, 30, 50],
+      :sortname  => 'number',
       :sortorder => 'desc',
-      :caption => 'Drawings',
-      :height => 'auto',
-      :autowidth => true,
+      :caption   => 'Drawings',
+      :height    => 'auto',
+      :width     => 340,
       :onSelectRow => "function() { alert('Row selected!');}".to_json_var
     }]
 
