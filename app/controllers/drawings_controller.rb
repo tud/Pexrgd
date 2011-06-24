@@ -1,10 +1,10 @@
 class DrawingsController < InheritedResources::Base
   respond_to :js, :json
   
-  autocomplete :drawing, :number,   :full => true, :scopes => [:distinct_designer]
-  autocomplete :drawing, :rev,                     :scopes => [:distinct_designer]
-  autocomplete :drawing, :format,                  :scopes => [:distinct_format]
-  autocomplete :drawing, :descr,                   :scopes => [:distinct_descr]
+  autocomplete :drawing, :number, :full => true, :scopes => [:distinct_designer]
+  autocomplete :drawing, :rev, :scopes => [:distinct_designer]
+  autocomplete :drawing, :format, :scopes => [:distinct_format]
+  autocomplete :drawing, :descr, :scopes => [:distinct_descr]
   autocomplete :drawing, :designer, :full => true, :scopes => [:distinct_designer]
   
   def index
@@ -28,5 +28,4 @@ class DrawingsController < InheritedResources::Base
   def jqgrid
     @q = params
   end
-
 end
