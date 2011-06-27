@@ -8,7 +8,7 @@ class DrawingsController < InheritedResources::Base
   autocomplete :drawing, :designer, :full => true, :scopes => [:distinct_designer]
   
   def index
-    @columns = ['id','number','rev','format','descr','designer']
+    @columns = ['id','s','number','rev','format','descr','designer']
     search_result = Drawing.search(params[:q])
     @drawings = search_result.result(:distinct => true).paginate(
       :page     => params[:page],
@@ -28,4 +28,9 @@ class DrawingsController < InheritedResources::Base
   def jqgrid
     @q = params
   end
+
+  def show
+    @drawing = Drawing.find(params[:id])
+  end
+
 end

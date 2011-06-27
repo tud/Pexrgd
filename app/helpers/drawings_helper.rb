@@ -5,14 +5,16 @@ module DrawingsHelper
 
     options = {:on_document_ready => true, :html_tags => false}
 
+        # {:name => 'S',    :width => 10, :formatter => 'showlink', :formatoptions => {:baseLinkUrl => url_for(drawings_path) + '/show' }}, 
     grid = [{
       :url => drawings_path + ".json?" + @q.to_param,
       :datatype => 'json',
       :mtype    => 'GET',
-      :colNames => ['Id','Number','Rev','Format','Description','Designer'],
+      :colNames => ['Id','','Number','Rev','Format','Description','Designer'],
       :colModel => [
-        {:name => 'id',       :index => 'id',       :width => 20 }, 
-        {:name => 'number',   :index => 'number',   :width => 100 }, 
+        {:name => 'id',       :index => 'id',       :width => 20 , :hidden => true}, 
+        {:name => 'action',    :width => 7}, 
+        {:name => 'number',   :index => 'number',   :width => 100 },
         {:name => 'rev',      :index => 'rev',      :width => 30  }, 
         {:name => 'format',   :index => 'format',   :width => 25  }, 
         {:name => 'descr',    :index => 'descr',    :width => 120 }, 
@@ -25,12 +27,10 @@ module DrawingsHelper
       :sortorder   => 'desc',
       :caption     => 'Drawings',
       :height      => 'auto',
-      :viewrecords => true,
-      :onSelectRow => "function() { alert('Row selected!');}".to_json_var
+      :viewrecords => true
     }]
-#      :gridComplete => 'function(){ var ids = $(\'#drawings_jqgrid\').jqGrid(\'getDataIds\'); for (var ii=0;ii<ids.length;++ii) { var cell = ids[ii]; var edit_btn = \'<input type=button value=E />\'; $(\'#drawings_jqgrid\').jqGrid(\'setRowData\', ids[ii], {\'action\': edit_btn}); } }'.to_json_var,
 
-    pager = [:navGrid, "#drawings_pager", {}, {}, {}, {:closeOnEscape => true}]
+    pager = [:navGrid, "#drawings_pager", {add:false,edit:false,search:false,del:false,refresh:false}, {}, {}, {:closeOnEscape => true}]
 
     # pager_button = [:navButtonAdd, "#drawings_pager", {:caption => 'Add', :onClickButton => 'function() {alert("Custom button!")}'.to_json_var }]
     

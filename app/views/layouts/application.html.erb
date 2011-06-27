@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Pexrgd</title>
+  <title>PLM Explorer for rgd</title>
 
   <!--
   <link rel="shortcut icon" href="/images/favicon.ico" />
@@ -18,44 +18,27 @@
   <%= stylesheet_link_tag 'ui.jqgrid.css' %>
   <%= stylesheet_link_tag 'application.css' %>
 
-  <%# <%= javascript_include_tag 'libs/modernizr-2.0.min' %>%>
-  <%# <%= javascript_include_tag 'libs/respond.min' %>%>
+  <%= javascript_include_tag 'libs/modernizr-2.0.min' %>
+  <%= javascript_include_tag 'libs/respond.min' %>
   <%= csrf_meta_tag %>
 </head>
-<body id="main">
 
+<body id="main">
   <div class="ui-layout-center">
-    <div id="center_accordion" class="pex_accordion">
-      <h3><a href="#"><%=t :find -%></a></h3>
-      <div id="center_find">
-      </div>
-      <h3><a href="#"><%=t :find_result_table -%></a></h3>
-      <div id="center_find_result">
-      </div>
-    </div>
+    <%= render 'partials/center' -%>
   </div>
   <div class="ui-layout-north">
-    <div id="north_content">
-      <span class="ui-state-default">PLM</span><span class="ui-state-active">EXPLORER</span>
-    </div>
+    <%= render 'partials/north' -%>
   </div>
   <div class="ui-layout-west">
-    <div id="west_accordion" class="pex_accordion">
-      <h3><a href="#"><%=t :find -%></a></h3>
-      <div>
-		<%= link_to t(:drawings), search_drawings_path, :remote => true -%>
-      </div>
-    </div>
+    <%= render 'partials/west' -%>
   </div>
   <div class="ui-layout-east">
-    <div id="east_accordion" class="pex_accordion">
-      <h3><a href="#"><%=t :workspace -%></a></h3>
-      <div>
-        <%=t :workspace -%>
-      </div>
-    </div>
+    <%= render 'partials/east' -%>
   </div>
-  <div class="ui-layout-south">South</div>
+  <div class="ui-layout-south">
+    <%= render 'partials/south' -%>
+  </div>
   
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="/javascripts/libs/jquery-1.5.2.min.js"><\/script>')</script>
@@ -64,9 +47,8 @@
   <script>window.jQuery.ui || document.write('<script src="/javascripts/libs/jquery-ui-1.8.13.min.js"><\/script>')</script>
 
   <%= javascript_include_tag 'jquery_ujs', 'plugins' %>
-  <%# <%= javascript_include_tag 'autocomplete-rails', 'jquery.formalize.min' %>%>
+  <%= javascript_include_tag 'autocomplete-rails', 'jquery.formalize.min' %>
   <%= javascript_include_tag 'jquery.layout-latest', 'i18n/grid.locale-en', 'jquery.jqGrid.min' %>
   <%= javascript_include_tag 'application' %>
-
 </body>
 </html>
