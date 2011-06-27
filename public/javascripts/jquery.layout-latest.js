@@ -1370,7 +1370,7 @@ $.fn.layout = function (opts) {
 	var initContainer = function () {
 		var
 			$C		= $Container // alias
-		,	tag		= sC.tagName = $C.attr("tagName")
+		,	tag		= sC.tagName = $C[0].tagName
 		,	fullPage= (tag == "BODY")
 		,	props	= "position,margin,padding,border"
 		,	CSS		= {}

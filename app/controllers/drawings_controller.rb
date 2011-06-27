@@ -1,14 +1,14 @@
 class DrawingsController < InheritedResources::Base
   respond_to :js, :json
   
-  autocomplete :drawing, :number,   :full => true, :scopes => [:distinct_designer]
-  autocomplete :drawing, :rev,                     :scopes => [:distinct_designer]
-  autocomplete :drawing, :format,                  :scopes => [:distinct_format]
-  autocomplete :drawing, :descr,                   :scopes => [:distinct_descr]
+  autocomplete :drawing, :number, :full => true, :scopes => [:distinct_designer]
+  autocomplete :drawing, :rev, :scopes => [:distinct_designer]
+  autocomplete :drawing, :format, :scopes => [:distinct_format]
+  autocomplete :drawing, :descr, :scopes => [:distinct_descr]
   autocomplete :drawing, :designer, :full => true, :scopes => [:distinct_designer]
   
   def index
-    @columns = ['id','number','rev','format','descr','designer']
+    @columns = ['id','s','number','rev','format','descr','designer']
     search_result = Drawing.search(params[:q])
     @drawings = search_result.result(:distinct => true).paginate(
       :page     => params[:page],
@@ -27,6 +27,10 @@ class DrawingsController < InheritedResources::Base
   
   def jqgrid
     @q = params
+  end
+
+  def show
+    @drawing = Drawing.find(params[:id])
   end
 
 end

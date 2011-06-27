@@ -1,4 +1,4 @@
-<table id="drawings_list"><tr><td/></tr></table> 
+<table id="drawings_list"></table> 
 <div id="drawings_pager"></div>
 
 <%= raw(drawings_jqgrid) %>
@@ -6,5 +6,16 @@
 <script>
   /* padding left (31) + borders (1+1) + padding right (31) */
   var centerWidth = pexlayout.cssWidth('center') -67;
+  var drawing_path = "<%= drawings_url %>/";
   $('#drawings_list').setGridWidth(centerWidth);
+  $('#drawings_list').setGridParam({
+    gridComplete: function() {
+      var ids = $(this).jqGrid('getDataIDs');
+      for(var i=0;i < ids.length;i++){
+        var cl = ids[i];
+        se = "<a href='"+drawing_path+cl+"' data-remote='true'><span class='ui-icon ui-icon-folder-open'></span></a>"; 
+        $(this).jqGrid('setRowData',ids[i],{action:se});
+      }
+    }
+  });
 </script>

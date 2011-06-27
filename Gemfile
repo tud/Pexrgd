@@ -6,7 +6,7 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 1.0.12'
 gem 'simple_form'
 gem 'ransack'
 gem 'inherited_resources'
