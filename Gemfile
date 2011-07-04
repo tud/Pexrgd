@@ -15,7 +15,7 @@ gem 'jqgrid_for_rails'
 gem 'will_paginate', '~> 3.0.pre2'
 
 group :development do
-  gem 'annotate-models'
+  gem 'annotate'
   gem 'hirb'
   gem 'wirb'
   gem 'bond'

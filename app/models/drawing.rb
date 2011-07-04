@@ -1,3 +1,11 @@
+class Drawing < ActiveRecord::Base
+  scope :distinct_number, group(:number)
+  scope :distinct_rev, group(:rev)
+  scope :distinct_format, group(:format)
+  scope :distinct_descr, group(:descr)
+  scope :distinct_designer, group(:designer)
+end
+
 # == Schema Information
 #
 # Table name: drawings
@@ -24,10 +32,3 @@
 #  bom_flag     :string(1)
 #
 
-class Drawing < ActiveRecord::Base
-  scope :distinct_number, group(:number)
-  scope :distinct_rev, group(:rev)
-  scope :distinct_format, group(:format)
-  scope :distinct_descr, group(:descr)
-  scope :distinct_designer, group(:designer)
-end

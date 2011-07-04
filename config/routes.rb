@@ -73,3 +73,21 @@ Pexrgd::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 end
+#== Route Map
+# Generated on 27 Jun 2011 15:02
+#
+#                             site_index GET    /site/index(.:format)                                       {:controller=>"site", :action=>"index"}
+#                        search_drawings GET    (/:locale)/drawings/search(.:format)                        {:locale=>/en|it/, :action=>"search", :controller=>"drawings"}
+#                        jqgrid_drawings GET    (/:locale)/drawings/jqgrid(.:format)                        {:locale=>/en|it/, :action=>"jqgrid", :controller=>"drawings"}
+#   autocomplete_drawing_number_drawings GET    (/:locale)/drawings/autocomplete_drawing_number(.:format)   {:locale=>/en|it/, :action=>"autocomplete_drawing_number", :controller=>"drawings"}
+#      autocomplete_drawing_rev_drawings GET    (/:locale)/drawings/autocomplete_drawing_rev(.:format)      {:locale=>/en|it/, :action=>"autocomplete_drawing_rev", :controller=>"drawings"}
+#   autocomplete_drawing_format_drawings GET    (/:locale)/drawings/autocomplete_drawing_format(.:format)   {:locale=>/en|it/, :action=>"autocomplete_drawing_format", :controller=>"drawings"}
+#    autocomplete_drawing_descr_drawings GET    (/:locale)/drawings/autocomplete_drawing_descr(.:format)    {:locale=>/en|it/, :action=>"autocomplete_drawing_descr", :controller=>"drawings"}
+# autocomplete_drawing_designer_drawings GET    (/:locale)/drawings/autocomplete_drawing_designer(.:format) {:locale=>/en|it/, :action=>"autocomplete_drawing_designer", :controller=>"drawings"}
+#                               drawings GET    (/:locale)/drawings(.:format)                               {:locale=>/en|it/, :action=>"index", :controller=>"drawings"}
+#                                        POST   (/:locale)/drawings(.:format)                               {:locale=>/en|it/, :action=>"create", :controller=>"drawings"}
+#                            new_drawing GET    (/:locale)/drawings/new(.:format)                           {:locale=>/en|it/, :action=>"new", :controller=>"drawings"}
+#                           edit_drawing GET    (/:locale)/drawings/:id/edit(.:format)                      {:locale=>/en|it/, :action=>"edit", :controller=>"drawings"}
+#                                drawing GET    (/:locale)/drawings/:id(.:format)                           {:locale=>/en|it/, :action=>"show", :controller=>"drawings"}
+#                                        PUT    (/:locale)/drawings/:id(.:format)                           {:locale=>/en|it/, :action=>"update", :controller=>"drawings"}
+#                                        DELETE (/:locale)/drawings/:id(.:format)                           {:locale=>/en|it/, :action=>"destroy", :controller=>"drawings"}

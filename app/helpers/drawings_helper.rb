@@ -13,7 +13,7 @@ module DrawingsHelper
       :colNames => ['Id','','Number','Rev','Format','Description','Designer'],
       :colModel => [
         {:name => 'id',       :index => 'id',       :width => 20 , :hidden => true}, 
-        {:name => 'action',    :width => 7}, 
+        {:name => 'action',                         :width => 10  }, 
         {:name => 'number',   :index => 'number',   :width => 100 },
         {:name => 'rev',      :index => 'rev',      :width => 30  }, 
         {:name => 'format',   :index => 'format',   :width => 25  }, 
